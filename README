@@ -1,0 +1,41 @@
+UDTCAT
+------
+udtcat is simple data transfer tool over the reliable UDP-based Data Transfer (UDT) protocol. 
+
+Git: http://github.com/oghazal/udtcat
+
+What is UDT?
+------------
+UDT is a reliable UDP based application level data transport protocol for distributed data intensive applications over wide area high-speed networks. UDT uses UDP to transfer bulk data with its own reliability control and congestion control mechanisms. The new protocol can transfer data at a much higher speed than TCP does.
+
+http://udt.sourceforge.net/
+
+Installation
+------------
+udtcat depends on the UDT library, please install the development package of the UDT.
+
+Debain and Ubuntu 
+$ sudo   apt-get   update
+$ sudo   apt-get   install   build-essential   libudt-dev
+$ make 
+$ sudo   make   install 
+
+Fedora, Centos, and Red hat
+
+$ sudo   yum   install   make   automake   gcc   gcc-c++   udt-devel
+$ make 
+$ sudo   make   install
+
+usage examples
+--------------
+* simple chat
+
+$ udtcat -l     # listen on the default port on machine A
+$ udtcat 192.168.100.99     # connect to machine A from machine B
+
+* file transfer 
+$ udtcat -l -p 8899 > ~/Downloads/recevied_file.data  # listen on port 8899 on machine A
+$ cat ~/Desktop/file.data | udtcat 192.168.100.99 -p 8899  # send the file from machine B to machine A
+
+* like many other tools, udtcat handles SIGUSR1 and prints total sent and received bytes when receiving the signal.
+$ killall -SIGUSR1 udcat

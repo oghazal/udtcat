@@ -1,0 +1,81 @@
+.TH UDTCAT 1 "MARCH 2016" udtcat "Udtcat User Manual"
+.SH NAME
+udtcat \- transfer data over UDT protocol
+.SH SYNOPSIS
+.B udtcat 
+[OPTIONS..] [HOSTNAME]
+
+.SH DESCRIPTION
+.B udtcat
+is simple data transfer tool over UDP-based Data Transfer (UDT) protocol. 
+.B udtcat 
+is developed to send and receive data across UDT network connections from the command line, similar to the popular 
+.BR nc (1)
+utility.
+.sp
+.B udtcat
+will print total sent/received bytes upon receiving the signal SIGUSR1.
+.SH OPTIONS
+.IP -l
+listen for incoming connections
+.IP -p
+port number to listen on or connect to (default 1988)
+.IP -s
+print total sent/received bytes before exit
+.IP -h
+display help screen
+.IP -v
+display program version
+
+.SH UDT
+UDP-based Data Transfer(UDT) is a reliable 
+.BR UDP (7)
+based application level data transport protocol for distributed data intensive applications over wide area high-speed networks. UDT uses UDP to transfer bulk data with its own reliability control and congestion control mechanisms. The new protocol can transfer data at a much higher speed than TCP does. read more at
+.I http://udt.sourceforge.net/
+
+.SH EXAMPLES
+.B * Simple Chat  
+.sp
+listen for connections 
+.B udtcat -l     
+.sp
+connect to machine
+.B udtcat 192.168.100.99     
+.sp 
+.B * File Transfer 
+.sp
+listen on port 8899 and redirect output to 'received_data.dat'
+.sp
+.B udtcat -l -p 8899 > received_file.data 
+.sp
+send the file 'data.dat'
+.sp
+.B cat data.dat | udtcat 192.168.100.99 -p 8899 
+
+
+.SH BUGS
+you can help make 
+.B udtcat 
+better by sending bug reports or patches to
+<udtcat.bugs@gmail.com>
+.SH AUTHOR
+Obieda Ghazal <obieda.ghazal@gmail.com>
+.SH "SEE ALSO"
+.BR nc (1),
+.BR udp (7),
+
+.SH COPYRIGHT
+.B udtcat
+is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3 of the License, or
+(at your option) any later version.
+.sp
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+.sp
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA

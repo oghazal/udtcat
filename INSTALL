@@ -1,0 +1,21 @@
+udtcat depends on libudt. to install the library and udtcat, please invoke the following commands
+
+Debain and Ubuntu 
+------------------
+$ sudo   apt-get   update
+$ sudo   apt-get   install libudt-dev #install deps
+$ make # build the program
+$ sudo   make   install # install the program
+
+Fedora, Centos, and Red hat
+----------------------------
+$ sudo   yum   install udt-devel
+$ make # build the program
+$ sudo   make   install # install the program
+
+
+* to uninstall the program 
+$ sudo   make   uninstall
+
+* please read the manual for the progam usage
+$ man udtcat
