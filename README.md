@@ -7,32 +7,32 @@ UDT is a reliable UDP based application level data transport protocol for distri
 The new protocol can transfer data at a much higher speed than TCP does. read more at http://udt.sourceforge.net/
 
 ## Installation
-udtcat uses on the UDT library, please install the library development package
+udtcat uses on the UDT library, please install the library development package.
 
-** Debain and Ubuntu **
+**Debian and Ubuntu**
 
-`$ sudo   apt-get   update`
-`$ sudo   apt-get   install   build-essential   libudt-dev`
-`$ make`
-`$ sudo   make   install`
+`$ sudo   apt-get   update` update repository <br />
+`$ sudo   apt-get   install   build-essential   libudt-dev` install UDT library and build tools <br />
+`$ make` build udtcat <br />
+`$ sudo   make   install` install udtcat <br />
 
-** Fedora, Centos, and Red hat **
+**Fedora, Centos, and Red hat**
 
-`$ sudo   yum   install   make   gcc-c++   udt-devel`
-`$ make` 
-`$ sudo   make   install`
+`$ sudo   yum   install   make   gcc-c++   udt-devel` install UDT library and build tools <br />
+`$ make` build udtcat <br />
+`$ sudo   make   install` install udtcat <br />
 
 ## Examples
 
-** simple chat **
+**Simple Chat**
 
-`$ udtcat -l` listen for connections
-`$ udtcat 192.168.100.99` connect to machine
+`$ udtcat -l` listen for connections <br />
+`$ udtcat 192.168.100.99` connect to machine <br />
 
-** file transfer **
+**File Transfer**
 
-`$ udtcat -l -p 8899 > received_file.data` listen on port 8899 and redirect output to 'received_data.dat'
-`$cat data.dat | udtcat 192.168.100.99 -p 8899` send the file 'data.dat'
+`$ udtcat -l -p 8899 > received_file.data` listen on port 8899 and redirect output to 'received_data.dat' <br />
+`$cat data.dat | udtcat 192.168.100.99 -p 8899` send the file 'data.dat' <br />
 
 udtcat will print total sent/received bytes upon receiving the signal SIGUSR1. `$ killall -SIGUSR1 udtcat`
 
