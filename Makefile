@@ -1,6 +1,6 @@
 CC=g++
-CFLAGS=-c -g -O0 -Iinclude -Wall -Wextra
-LDFLAGS=-ludt -lpthread
+CFLAGS=-c -g -O0 -Iinclude -Wall -Wextra -I../udt4
+LDFLAGS=../udt4/src/libudt.a -lpthread
 
 TARGET = udtcat
 PREFIX = $(DESTDIR)/usr/local
