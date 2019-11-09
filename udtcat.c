@@ -1,7 +1,7 @@
 /*
  *  udtcat is simple file transfer tool over the reliable UDP-based Data Transfer (UDT) protocol.  
  *
- *  Copyright (C) 2016  Obieda Ghazal <obieda.ghazal@gmail.com>
+ *  Copyright (C) 2016  Obieda Ghazal 
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
